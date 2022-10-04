@@ -16,6 +16,11 @@ const productsDiv = document.querySelector(".products");
 productsDiv.addEventListener("click", (event) => {
   if (event.target.className == "fa-solid fa-minus") {
     console.log("eksi buton");
+    if (event.target.parentElement.querySelector(".quantity").innerText > 1) {
+      event.target.nextElementSibling.innerText--;
+    } else {
+      alert("artık azaltamazsın");
+    }
   } else if (event.target.className == "fa-solid fa-plus") {
     console.log("artı buton");
     // console.log(event.target.previousElementSibling.innerText);
